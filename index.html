@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="stylesheets/core.css" media="screen">
     <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-
+    <script type="text/javascript" src="scripts/widgEditor.js"></script>
     <script type="text/javascript" src="javascripts/modernizr.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
@@ -79,6 +79,21 @@ Information Processing Letters. (Submitted) URL: http://arxiv.org/abs/1412.6268<
 URL: http://arxiv.org/abs/1505.00887</p>
 <h4>Erdős number</h4>
 <B style="font-weight:bold;">4</B>
+
+
+
+<h2>APA to ACM convertor</h2>
+<p>Based on widgEditor, a GNU license thingy.</p>
+<textarea id="noise" class="widgEditor nothing">APA</textarea>
+<button type="button" onclick="myFunction()">Turn it</button>
+<script>
+  function myFunction() {
+    var x = document.getElementById("noise").value;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+<p id="demo"></p>
+
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
