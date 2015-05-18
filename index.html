@@ -82,17 +82,103 @@ URL: http://arxiv.org/abs/1505.00887</p>
 
 
 
-<h2>APA to ACM convertor</h2>
-<p>Based on widgEditor, a GNU license thingy.</p>
-<textarea id="noise" class="widgEditor nothing">APA</textarea>
-<button type="button" onclick="myFunction()">Turn it</button>
-<script>
-  function myFunction() {
-    var x = document.getElementById("noise").value;
-    document.getElementById("demo").innerHTML = x;
-}
-</script>
-<p id="demo"></p>
+<h4>APA to ACM journal citation convertor, for Ubicomp</h4>
+		<p>
+			Based on widgEditor, a GNU license thingy.
+		</p>
+		<form action="submit.php"  onsubmit="return false;">
+			<fieldset>
+				<textarea id="noise" class="widgEditor nothing">&lt;p&gt;widgEditor &lt;strong&gt;automatically&lt;/strong&gt; integrates the content that was in the textarea!&lt;/p&gt;</textarea>
+			</fieldset>
+			<fieldset class="submit">
+				<input type="submit" value="Click this first" />
+			</fieldset>
+		</form>
+		<button type="button" onclick="myFunction123()">Click this second</button>
+		<script>
+			function myFunction123() {
+				var apa = document.getElementById("noise").value;
+				
+				var left_year_bracket = apa.indexOf("(");
+				
+				var result = "";
+				
+				
+				
+				//it has & mark in authors, change!
+				for (var i = 0; i <left_year_bracket; i++)
+				{
+					if ("&" == apa[i])
+					{//&amp;
+						for (var j = 0 ; j < i ; j++)
+						{
+							if(j==i-2)
+							{
+								continue;
+							}
+							result = result + apa[j];
+						}
+						result = result + "and";
+						for (var j = i+5; j < left_year_bracket; j++)
+						{
+							result = result + apa[j];
+						}
+						break;
+					}
+				}
+				if (result.length==0)
+				{
+					for (var i = 0; i <left_year_bracket; i++)
+					{
+						result = result + apa[i];
+					}
+				}
+				
+				result = result + apa[left_year_bracket+1];
+				result = result + apa[left_year_bracket+2];
+				result = result + apa[left_year_bracket+3];
+				result = result + apa[left_year_bracket+4];
+				
+				var rest_apa = "";
+				for (var i = left_year_bracket+6; i <apa.length; i++)
+				{
+					rest_apa = rest_apa + apa[i];
+				}
+				var comma = rest_apa.indexOf("</em>");
+				
+				for (var i =0; i <comma+5; i++)
+				{
+					result = result + rest_apa[i];
+				}
+				var rest_rest_apa = "";
+				for (var i =comma+6; i <rest_apa.length; i++)
+				{
+					rest_rest_apa = rest_rest_apa + rest_apa[i];
+				}
+				var italic_start = rest_rest_apa.indexOf("<em>");
+				for (var i =0; i <italic_start; i++)
+				{
+					result = result + rest_rest_apa[i];
+				}
+				var italic_end = rest_rest_apa.indexOf("</em>");
+				for (var i =italic_start+4; i <italic_end; i++)
+				{
+					result = result + rest_rest_apa[i];
+				}
+				var last_bracket= rest_rest_apa.indexOf(")");
+				result = result +", ";
+				for (var i =italic_end+6; i <last_bracket; i++)
+				{
+					result = result + rest_rest_apa[i];
+				}
+				for (var i =last_bracket+1; i <rest_rest_apa.length; i++)
+				{
+					result = result + rest_rest_apa[i];
+				}
+				document.getElementById("demo2").innerHTML = result;
+			}
+		</script>
+<p id="demo2"></p>
 
 
 <h3>
