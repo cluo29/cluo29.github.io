@@ -100,26 +100,9 @@ var widgStylesheet = "css/widgContent.css";
 /* Items to appear in toolbar. */
 var widgToolbarItems = new Array();
 
-widgToolbarItems.push("bold");
+
 widgToolbarItems.push("italic");
-widgToolbarItems.push("hyperlink");
-widgToolbarItems.push("unorderedlist");
-widgToolbarItems.push("orderedlist");
-widgToolbarItems.push("image");
-widgToolbarItems.push("htmlsource");
-widgToolbarItems.push("blockformat");
 
-/* Options on block format select element. Consists of string pairs (option value, option label) */
-var widgSelectBlockOptions = new Array();
-
-widgSelectBlockOptions.push("", "Change block type");
-widgSelectBlockOptions.push("<h1>", "Heading 1");
-widgSelectBlockOptions.push("<h2>", "Heading 2");
-widgSelectBlockOptions.push("<h3>", "Heading 3");
-widgSelectBlockOptions.push("<h4>", "Heading 4");
-widgSelectBlockOptions.push("<h5>", "Heading 5");
-widgSelectBlockOptions.push("<h6>", "Heading 6");
-widgSelectBlockOptions.push("<p>", "Paragraph");
 
 /* If widgInsertParagraphs = true, when content is submitted paragraphs will be
 ** inserted around text without a parent element. Mozilla does not
