@@ -180,7 +180,7 @@ header h1 {
   font-weight: 800;
   font-style: normal;
   text-transform: uppercase;
-  color: #ece4d8;
+  color: #ffffff;
   text-align: center;
   line-height:1;
   padding: 14px 20px 0;
@@ -364,7 +364,7 @@ footer span.octocat {
 /* content */
 
 body {
-  background: #ece4d8;
+  background: #ffffff;
   font: normal normal 15px/1.5 Georgia, Palatino,” Palatino Linotype”, Times, “Times New Roman”, serif;
   color: #544943;
   -webkit-font-smoothing: antialiased;
@@ -474,7 +474,7 @@ tr {
 th {
   display: table-cell;
   padding: 2px 10px;
-  border: solid #ece4d8;
+  border: solid #ffffff;
   border-width: 0 2px 2px 0;
   color: #cd596b;
   font-family: 'Open Sans', Myriad, Calibri, sans-serif;
