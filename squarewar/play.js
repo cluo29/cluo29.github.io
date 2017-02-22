@@ -126,7 +126,7 @@ function play(row, col) {
 	}
 	// 处理已有棋子在此
 	if (pan[row][col] != 0) {
-		alert("此处已有棋子！");
+		alert("Already full here");
 		return;
 	}
 
