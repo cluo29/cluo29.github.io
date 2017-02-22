@@ -126,7 +126,7 @@ function play(row, col) {
 	}
 	// 处理已有棋子在此
 	if (pan[row][col] != 0) {
-		alert("此处已有棋子！");
+		alert("Already full there");
 		return;
 	}
 
@@ -136,7 +136,28 @@ function play(row, col) {
 	}
 	else
 	{
-		stone_down_black(row, col);
+		if(move_count===2)
+		{
+	
+			if(move_record[0][0]==row&&Math.abs(move_record[0][1]-col)==1)
+			{
+				stone_down_black(row, col);
+			}
+			else if(move_record[0][1]==col&&Math.abs(move_record[0][0]-row)==1)
+			{
+				stone_down_black(row, col);
+			}
+			else
+			{
+				alert("First 2 black must stick together");
+			}
+
+		}
+		else
+		{
+			stone_down_black(row, col);
+		}
+		
 	}
 	//alert("row="+row+"col="+col);
 }
